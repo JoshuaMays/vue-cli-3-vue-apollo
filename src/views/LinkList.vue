@@ -2,7 +2,7 @@
   <div>
     <div>
       <h4 v-if="loading">Loading...</h4>
-      <link-item v-for="(link, index) in allLinks"
+      <link-item v-for="(link, index) in orderedLinks"
         :key="link.id"
         :link="link"
         :index="index"

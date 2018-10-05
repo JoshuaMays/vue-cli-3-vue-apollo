@@ -10,7 +10,10 @@
       <div class="flex" v-if="userId">
         <div class="ml1">|</div>
         <router-link to="/create" class="ml1 no-underline black">submit</router-link>
+        <div class="ml1">|</div>
+        <router-link to="/upvoted" class="ml1 no-underline black">upvoted</router-link>
       </div>
+
     </div>
     <div class="flex flex-fixed">
       <div v-if="userId"

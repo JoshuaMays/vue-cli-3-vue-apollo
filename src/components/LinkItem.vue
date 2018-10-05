@@ -60,7 +60,7 @@ export default {
         }
       });
     },
-    updateStoreAfterVote(store, createVote, linkId) {
+    updateStoreAfterVote (store, createVote, linkId) {
       const data = store.readQuery({
         query: ALL_LINKS_QUERY,
         variables: {
@@ -69,20 +69,12 @@ export default {
           orderBy: 'createdAt_DESC'
         }
       });
-
       const votedLink = data.allLinks.find(link => link.id === linkId);
       votedLink.votes = createVote.link.votes;
-
       store.writeQuery({
         query: ALL_LINKS_QUERY,
-        variables: {
-          first: 5,
-          skip: 0,
-          orderBy: 'createdAt_DESC'
-        },
         data
       });
-
     }
   }
 };

@@ -30,6 +30,10 @@ export default new Router({
     {
       path: '/top',
       component: () => import (/* webpackChunkName: "linkList" */ './views/LinkList.vue')
+    },
+    {
+      path: '/upvoted',
+      component: () => import(/* webpackChunkName: "upvoted" */ './views/Upvoted.vue')
     }
   ]
-})
+});

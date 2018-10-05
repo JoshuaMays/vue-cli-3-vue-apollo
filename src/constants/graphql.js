@@ -132,6 +132,33 @@ export const ALL_LINKS_SEARCH_QUERY = gql`
   }
 `;
 
+export const ALL_LINKS_UPVOTED_BY_USER = gql`
+  query AllLinksUpvotedByUser($userId: ID!) {
+    allLinks(filter: {
+      votes_some: {
+        user: {
+          id: $userId
+        }
+      }
+    }) {
+      id
+      url
+      description
+      createdAt
+      postedBy {
+        id
+        name
+      }
+      votes {
+        id
+        user {
+          id
+        }
+      }
+    }
+  }
+`;
+
 export const NEW_LINKS_SUBSCRIPTION = gql`
   subscription {
     Link(filter: {
